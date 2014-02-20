@@ -1,3 +1,9 @@
+#include "../../xark/src/xark.h"
+//TODO create header for this file
+
+#define XARK_MEM_INIT_MODULE_ARRAY_SIZE 100
+
+
 struct XARK_STACK {
 	int item;//This is item'th element of stack
 	int pointer;//an int containing the address of the value of this element in the stack
@@ -30,4 +36,9 @@ struct XARK_STACK *XARK_STACK_POP(struct XARK_STACK *stack){
 	return stack->previous;
 
 
+}
+
+struct XARK_FUNCTION * XARK_MEM_FUNCTION_ARRAY_ALLOC(int XARK_FUNCTION_ARRAY_LENGTH){
+	struct XARK_FUNCTION * xark_function_array= malloc(XARK_FUNCTION_ARRAY_LENGTH * sizeof(XARK_FUNCTION));
+	return xark_function_array;
 }
